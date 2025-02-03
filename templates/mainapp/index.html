@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="h-full" dir="rtl" lang="fa">
  <head>
@@ -7,10 +8,10 @@
   <title>
    بنتوفولیو - قالب پورتفولیو شخصی با تیلویند
   </title>
-  <link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/>
+  <link href="{% static '' %}" rel="icon" type="image/svg+xml"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="assets\css\css2" rel="stylesheet"/>
+  <link href="{% static 'css/css2' %}" rel="stylesheet"/>
   <link href="assets\css\all.min.css" rel="stylesheet"/>
  </head>
  <body class="relative h-screen overflow-y-auto overflow-x-hidden bg-light text-dark dark:bg-dark-2 dark:text-light">
