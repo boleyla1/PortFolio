@@ -1,0 +1,82 @@
+
+#authModal, #codeModal {
+  background: rgba(0, 0, 0, 0.5); /* اضافه کردن تار شدن پس‌زمینه */
+}
+
+#authModal .bg-white, #codeModal .bg-white {
+  max-width: 600px; /* تنظیم عرض مودال */
+  width: 100%;
+  position: relative; /* اضافه کردن برای دکمه خروج */
+}
+
+button.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px; /* تنظیم مکان دکمه خروج به سمت چپ */
+  background: #e3342f; /* رنگ قرمز دکمه */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* بهبود ظاهر دکمه */
+}
+
+@media (max-width: 768px) {
+  #authModal .bg-white, #codeModal .bg-white {
+    max-width: 90%; /* تنظیم عرض مودال برای دستگاه‌های موبایل */
+  }
+}
+body.modal-open {
+  overflow: hidden; /* جلوگیری از اسکرول صفحه هنگام باز بودن مودال */
+}
+body, html {
+  overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  overflow-x: hidden; /* جلوگیری از اسکرول افقی در نوبار */
+}
+body.modal-open #main-content,
+body.modal-open #header,
+body.modal-open #footer,
+body.modal-open #works,
+body.modal-open #work-experience-section {
+  filter: blur(74px); /* تار کردن محتوا هنگام باز بودن مودال */
+}
+body.dark #authModal .bg-white,
+body.dark #codeModal .bg-white {
+  background-color: #333; /* تغییر رنگ پس‌زمینه مودال در حالت دارک */
+  color: #fff; /* تغییر رنگ متن به سفید در حالت دارک */
+}
+
+body.dark #authModal input,
+body.dark #codeModal input {
+  background-color: #444; /* تغییر رنگ پس‌زمینه اینپوت در حالت دارک */
+  color: #fff; /* تغییر رنگ متن اینپوت به سفید در حالت دارک */
+}
+
+body.dark #authModal button,
+body.dark #codeModal button {
+  background-color: #e3342f; /* تغییر رنگ دکمه‌ها به قرمز در حالت دارک */
+  color: #fff; /* تغییر رنگ متن دکمه‌ها به سفید در حالت دارک */
+}
+
+body.dark .close-button {
+  background-color: #e3342f; /* تغییر رنگ دکمه خروج به قرمز در حالت دارک */
+  color: #fff; /* تغییر رنگ متن دکمه خروج به سفید در حالت دارک */
+}
+body.dark#numertext{
+  color: black;
+}
+#numertext{
+  color: black;
+}
