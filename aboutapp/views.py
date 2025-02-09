@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from .models import Count
 
 
 def about(request):
-    render(request, 'about/about.html')
-# Create your views here.
+    come = Count.objects.first()  # دریافت همه اشیاء
+    return render(request, 'about/about.html', {'come': come})
