@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Skill, Project , RecentProject,Service
 
 
+
 def index(request):
     Projects = Project.objects.all()
     Skills = Skill.objects.all()
