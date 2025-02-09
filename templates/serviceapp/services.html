@@ -132,39 +132,40 @@
        </p>
       </div>
      </div>
-     <div class="mt-10 lg:mt-14">
-      <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
-       جوایز و افتخارات
-      </h3>
-      <div class="mt-8 space-y-4">
-          {% for proj in projects %}
-       <div class="group relative grid grid-cols-1 items-center gap-4 rounded-lg border border-transparent bg-light p-6 transition hover:border-light hover:bg-white dark:bg-dark-2 dark:hover:border-primary dark:hover:bg-black md:grid-cols-4 xl:gap-10">
-        <div class="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">
-         <div class="grid h-10 w-10 shrink-0 place-content-center rounded-lg bg-white transition group-hover:bg-light dark:bg-black dark:group-hover:bg-dark-2">
-          <img alt="" class="h-6 w-6 shrink-0" src="{{ proj.image.url }}"/>
-         </div>
-         <div class="">
-          <h5 class="font-medium leading-tight text-dark dark:text-light xl:text-lg xl:leading-tight">
-              {{ proj.title}}
-          </h5>
-          <p class="text-muted">
-           {{ proj.end_date }}
-          </p>
-         </div>
-        </div>
-       </div>
-                 {% endfor %}
-      </div>
-     </div>
+{#     <div class="mt-10 lg:mt-14">#}
+{#      <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">#}
+{#       جوایز و افتخارات#}
+{#      </h3>#}
+{#      <div class="mt-8 space-y-4">#}
+{#          {% for proj in projects %}#}
+{#       <div class="group relative grid grid-cols-1 items-center gap-4 rounded-lg border border-transparent bg-light p-6 transition hover:border-light hover:bg-white dark:bg-dark-2 dark:hover:border-primary dark:hover:bg-black md:grid-cols-4 xl:gap-10">#}
+{#        <div class="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center md:gap-6">#}
+{#         <div class="grid h-10 w-10 shrink-0 place-content-center rounded-lg bg-white transition group-hover:bg-light dark:bg-black dark:group-hover:bg-dark-2">#}
+{#          <img alt="" class="h-6 w-6 shrink-0" src="{{ proj.image.url }}"/>#}
+{#         </div>#}
+{#         <div class="">#}
+{#          <h5 class="font-medium leading-tight text-dark dark:text-light xl:text-lg xl:leading-tight">#}
+{#              {{ proj.title}}#}
+{#          </h5>#}
+{#          <p class="text-muted">#}
+{#           {{ proj.end_date }}#}
+{#          </p>#}
+{#         </div>#}
+{#        </div>#}
+{#       </div>#}
+{#                 {% endfor %}#}
+{#      </div>#}
+{#     </div>#}
      <div class="mt-10 lg:mt-14">
       <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
        سوالات متداول
       </h3>
+         {% for faqs in faq %}
       <div class="hs-accordion-group mt-8 space-y-4">
        <div class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
         <button class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
          <span>
-          یک طراح محصول باید چه چیزهایی بداند؟
+          {{ faqs.Question }}
          </span>
          <span class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
           <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -182,135 +183,12 @@
         <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
          <div class="px-6 pb-5">
           <p class="text-base xl:text-lg">
-           من اینجا هستم تا اگر به دنبال یک طراح محصول برای تحقق ایده خود یا یک همکار طراحی برای ارتقای کسب و کارتان به سطح بالاتر هستید، به شما کمک کنم.
+          {{ faqs.Answer }}
           </p>
          </div>
         </div>
        </div>
-       <div class="hs-accordion active rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-        <button class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-         <span>
-          یک طراح محصول باید چه چیزهایی بداند؟
-         </span>
-         <span class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-          <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-           <path d="M12 5v14">
-           </path>
-          </svg>
-          <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-          </svg>
-         </span>
-        </button>
-        <div class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300">
-         <div class="px-6 pb-5">
-          <p class="text-base xl:text-lg">
-           من اینجا هستم تا اگر به دنبال یک طراح محصول برای تحقق ایده خود یا یک همکار طراحی برای ارتقای کسب و کارتان به سطح بالاتر هستید، به شما کمک کنم.
-          </p>
-         </div>
-        </div>
-       </div>
-       <div class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-        <button class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-         <span>
-          یک طراح محصول باید چه چیزهایی بداند؟
-         </span>
-         <span class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-          <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-           <path d="M12 5v14">
-           </path>
-          </svg>
-          <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-          </svg>
-         </span>
-        </button>
-        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
-         <div class="px-6 pb-5">
-          <p class="text-base xl:text-lg">
-           من اینجا هستم تا اگر به دنبال یک طراح محصول برای تحقق ایده خود یا یک همکار طراحی برای ارتقای کسب و کارتان به سطح بالاتر هستید، به شما کمک کنم.
-          </p>
-         </div>
-        </div>
-       </div>
-       <div class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-        <button class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-         <span>
-          یک طراح محصول باید چه چیزهایی بداند؟
-         </span>
-         <span class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-          <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-           <path d="M12 5v14">
-           </path>
-          </svg>
-          <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-          </svg>
-         </span>
-        </button>
-        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
-         <div class="px-6 pb-5">
-          <p class="text-base xl:text-lg">
-           من اینجا هستم تا اگر به دنبال یک طراح محصول برای تحقق ایده خود یا یک همکار طراحی برای ارتقای کسب و کارتان به سطح بالاتر هستید، به شما کمک کنم.
-          </p>
-         </div>
-        </div>
-       </div>
-       <div class="hs-accordion rounded-lg border border-transparent bg-light transition hs-accordion-active:border-light hs-accordion-active:bg-white dark:border-transparent dark:bg-dark-2 dark:hs-accordion-active:border-dark-2 dark:hs-accordion-active:bg-black">
-        <button class="hs-accordion-toggle inline-flex w-full items-center justify-between gap-x-3 px-6 py-5 text-start text-lg font-medium text-dark transition hover:text-muted disabled:pointer-events-none disabled:opacity-50 hs-accordion-active:text-primary dark:text-light/70 dark:hover:text-light dark:focus:outline-none dark:hs-accordion-active:text-primary xl:text-2xl">
-         <span>
-          یک طراح محصول باید چه چیزهایی بداند؟
-         </span>
-         <span class="grid h-8 w-8 shrink-0 place-content-center rounded bg-white text-primary hs-accordion-active:bg-light dark:bg-black dark:hs-accordion-active:bg-dark-2">
-          <svg class="block h-3.5 w-3.5 hs-accordion-active:hidden" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-           <path d="M12 5v14">
-           </path>
-          </svg>
-          <svg class="hidden h-3.5 w-3.5 hs-accordion-active:block" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-           <path d="M5 12h14">
-           </path>
-          </svg>
-         </span>
-        </button>
-        <div class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
-         <div class="px-6 pb-5">
-          <p class="text-base xl:text-lg">
-           من اینجا هستم تا اگر به دنبال یک طراح محصول برای تحقق ایده خود یا یک همکار طراحی برای ارتقای کسب و کارتان به سطح بالاتر هستید، به شما کمک کنم.
-          </p>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-     <div class="mt-10 lg:mt-14">
-      <div class="group flex gap-6 overflow-hidden rounded-lg bg-light p-6 dark:bg-dark-2">
-       <div class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
-        <a class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:me-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]" href="contact.html">
-         بیایید با هم کار کنیم 👋
-        </a>
-        <a class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:me-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]" href="contact.html">
-         بیایید با هم کار کنیم 👋
-        </a>
-       </div>
-       <div class="relative flex min-w-full shrink-0 animate-infinite-scroll gap-6 group-hover:[animation-play-state:paused]">
-        <a class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:me-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]" href="contact.html">
-         بیایید با هم کار کنیم 👋
-        </a>
-        <a class="relative inline-block whitespace-nowrap text-3xl font-medium text-muted transition before:me-3 before:content-['\2022'] hover:text-dark dark:text-muted dark:hover:text-white md:text-[40px]" href="contact.html">
-         بیایید با هم کار کنیم 👋
-        </a>
-       </div>
+          {% endfor %}
       </div>
      </div>
     </div>

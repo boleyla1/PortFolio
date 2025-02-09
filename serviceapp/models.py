@@ -6,6 +6,6 @@ class Faq(models.Model):
     Answer = models.TextField()
 
     def __str__(self):
-        return self.ques
+        return self.Question
 
 # Create your models here.
