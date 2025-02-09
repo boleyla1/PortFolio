@@ -33,7 +33,7 @@
          </span>
          +
         </h2>
-           
+
         <p class="mt-2 text-muted">
          سال تجربه
         </p>
@@ -63,7 +63,7 @@
       </div>
       <div class="relative -mt-6 hidden h-[100px] w-[100px] p-4 lg:block xl:-mt-10">
        <img alt="" class="absolute inset-0 h-full w-full animate-spin-slow dark:hidden" src="{% static 'images/circle-text.svg' %}"/>
-       <img alt="" class="absolute inset-0 hidden h-full w-full animate-spin-slow dark:block" src="assets\images\circle-text-light.svg"/>
+       <img alt="" class="absolute inset-0 hidden h-full w-full animate-spin-slow dark:block" src="{% static 'images/circle-text-light.svg' %}"/>
        <div class="grid h-full w-full place-content-center rounded-full bg-primary text-light">
         <svg class="h-10 w-10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
          <path d="M20 5v30m-5-5 5 5 5-5">
@@ -72,10 +72,10 @@
        </div>
       </div>
      </div>
-   
+
      <div class="mt-10 lg:mt-14">
       <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
-       جوایز و افتخارات
+       پروژه ها
       </h3>
          {% for proj in Projects %}
       <div class="mt-8 space-y-4">
@@ -89,7 +89,7 @@
            {{ proj.title }}
           </h5>
           <p class="text-muted">
-           ۱۴۰۱ - ۱۴۰۲
+              {{ proj.end_date}}
           </p>
          </div>
         </div>
@@ -101,7 +101,7 @@
           </path>
          </svg>
          <h5 class="font-medium leading-tight text-dark dark:text-light">
-          نفر دوم
+             {{ proj.company }}
          </h5>
         </div>
         <div class="text-end">
@@ -120,6 +120,7 @@
       </div>
      </div>
      <div class="mt-10 lg:mt-14">
+         
       <div class="flex flex-wrap items-center justify-between gap-6">
        <h3 class="text-2xl font-medium text-dark dark:text-light lg:text-3xl">
         مقالات و انتشارات
@@ -141,6 +142,7 @@
       </div>
       <div class="mt-8">
        <div class="swiper blog-carousel">
+           {% for blog in Blogs %}
         <div class="swiper-wrapper">
          <div class="swiper-slide">
           <div class="">
@@ -157,20 +159,21 @@
            <div class="mt-6">
             <h2 class="text-xl font-medium xl:text-2xl">
              <a class="inline-block text-dark transition hover:text-primary dark:text-light/70 dark:hover:text-primary" href="article.html">
-              آیا می‌خواهید مغزتان را ارتقا دهید؟ انجام این ۷ کار را متوقف کنید
+                 {{ blog.title }}
              </a>
             </h2>
             <ul class="mt-4 flex flex-wrap items-center gap-2">
              <li class="relative text-sm text-muted/50 before:me-1 before:content-['\2022'] dark:text-muted">
-              ۱۵ دقیقه مطالعه
+                 {{ blog.timeread }} دقیقه مطالعه
              </li>
              <li class="relative text-sm text-muted/50 before:me-1 before:content-['\2022'] dark:text-muted">
-              ۱۵ آبان ۱۴۰۲
+                 {{blog.created_at}}
              </li>
             </ul>
            </div>
           </div>
          </div>
+            {% endfor %}
          <div class="swiper-slide">
           <div class="">
            <div class="relative">

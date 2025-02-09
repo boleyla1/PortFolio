@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import Skill, Project , RecentProject,Service
-
+from .models import Skill, Project, RecentProject, Service
 
 
 def index(request):

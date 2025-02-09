@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+ 
+    <div class="rounded-2xl bg-white p-6 shadow dark:bg-black dark:shadow-dark lg:col-span-2 lg:p-10">
+     <div class="">
+      <h2 class="text-3xl font-semibold leading-tight text-dark dark:text-light lg:text-[40px] lg:leading-tight">
+       مقالات و نشریات اخیر من
+      </h2>
+      <p class="mt-4 text-lg text-muted dark:text-light/70">
+       من اینجا هستم تا اگر به دنبال یک طراح محصول برای تحقق ایده خود یا یک همکار طراحی برای ارتقای کسب و کارتان به سطح بعدی هستید، به شما کمک کنم.
+      </p>
+     </div>
+        {% for blog in blogs %}
+     <div class="mt-10 lg:mt-14">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2">
+       <div class="">
+        <div class="relative">
+         <a class="group block aspect-6/4 overflow-hidden rounded-lg" href="{% url 'blog_detail' id=blog.id %}">
+          <img alt="" class="h-full w-full rounded-lg object-cover transition duration-700 group-hover:scale-105" src="assets\images\blog-img-1.jpg"/>
+         </a>
+         <div class="absolute bottom-4 start-4 flex flex-wrap gap-2">
+          <a class="inline-flex items-center justify-center gap-2 rounded bg-white px-2 py-1 text-center text-xs leading-none text-primary shadow transition hover:bg-primary hover:text-white" href="#">
+           توسعه
+          </a>
+         </div>
+        </div>
+        <div class="mt-6">
+         <h2 class="text-xl font-medium xl:text-2xl">
+          <a class="inline-block text-dark transition hover:text-primary dark:text-light/70 dark:hover:text-primary" href="article.html">
+              {{ blog.title}}
+          </a>
+         </h2>
+         <ul class="mt-4 flex flex-wrap items-center gap-2">
+          <li class="relative text-sm text-muted/50 before:me-1 before:content-['\2022'] dark:text-muted">
+              {{blog.timeread}} دقیقه مطالعه
+          </li>
+          <li class="relative text-sm text-muted/50 before:me-1 before:content-['\2022'] dark:text-muted">
+           {{ blog.created_at }}
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+ 
